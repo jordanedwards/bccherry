@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en-US" class="no-js">
-	<head>
+@extends('layouts.main', [
+    'title' => 'BC Cherry Association',
+    'header' => 'FAQs',
+    'footer' => 'dark'
+])
 
-	<?php include("includes/head.php") ?>
-				
-	</head>
-  
-	<body class="inner-page">
-	
-		<!--=== PAGE PRELOADER ===-->
-		<div id="page-loader"><span class="page-loader-gif">Loading article...</span></div>
-		
-		<!-- ==============================================
-		MAIN NAV
-		=============================================== -->
+@section('header-styles')
 
-		<?php include("includes/navbar.php") ?>
+@stop
+
+@section('content')
 
 <section class="parallax-bg light-typo padding-top-bottom" data-parallax-background="images/cherry2.jpg" data-stellar-background-ratio="0.25" style="background-image: url(&quot;images/cherry-harvest-dark.jpg&quot;); background-position: 50% 3.5px;">
 		
@@ -149,16 +142,5 @@
 			</div>
 			
 		</section>
-		
-		<?php include("includes/footer_dark.php"); ?>
-		<?php include("includes/scripts.php") ?>
-		
-		<script src='assets/js/jquery.flexslider.min.js'></script>
-		<script src='assets/js/jquery.stellar.js'></script>
-		<script src="assets/js/waypoints.min.js"></script>
-		<script src="assets/js/waypoints-sticky.min.js"></script>
-		<script src="assets/js/jquery.fitvids.js"></script>
-				
-	</body>
-	
-</html>
+
+@endsection

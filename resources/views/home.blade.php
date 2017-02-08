@@ -58,7 +58,6 @@ HEADER
 
 @include('includes.navbar')
 
-
 <section id="about" class="gray-bg padding-top-bottom">
 
     <div class="container">
@@ -74,7 +73,7 @@ HEADER
                 <div class="features">
                     <h1>Our research</h1>
                     <p>The BCCA supports research projects that help advance the cherry industry. Successful projects on pest control, post harvest handling, breeding, and disease suppression are examples of work done in past. </p>
-                    <a class="btn btn-quattro" href="our-research.php">Read more</a>
+                    <a class="btn btn-quattro" href="our-research">Read more</a>
                 </div>
             </div>
 
@@ -82,7 +81,7 @@ HEADER
                 <div class="features">
                     <h1>Our Marketing</h1>
                     <p>The BCCA works with the Canadian Food Inspection Agency and the BC Ministry of Agriculture to administer export programs. We also act as the industry body when negotiating market access for new cherry export deals. </p>
-                    <a class="btn btn-quattro" href="our-marketing.php">Read more</a>
+                    <a class="btn btn-quattro" href="our-marketing">Read more</a>
                 </div>
             </div>
 
@@ -90,7 +89,7 @@ HEADER
                 <div class="features">
                     <h1>Grower resources</h1>
                     <p>It is currently membership renewal time! More information will be available under this tab in the near future. In the meantime, click below to find the membership form. </p>
-                    <a class="btn btn-quattro" href="grower-resources.php">Read more</a>
+                    <a class="btn btn-quattro" href="grower-resources">Read more</a>
                 </div>
             </div>
 
@@ -153,9 +152,9 @@ NEWS
                     </ul>
                 </header>
 
-                <p>The BCCA Research Committee is accepting research project proposals until January 15th, 2o16. Limited, secure funding is available to established and new projects.</p>
+                <p>The BCCA Research Committee is accepting research project proposals until January 15th, 2016. Limited, secure funding is available to established and new projects.</p>
 
-                <a class="post-link" href="image-post.html" title="Read post: Post with single featured image">Continue Reading</a>
+                <a class="post-link" href="post/12" title="Read post: Post with single featured image">Continue Reading</a>
 
             </article>
 
@@ -174,13 +173,13 @@ NEWS
 
                 <p>The BCCA AGM will be held on February 23rd at the Rutland Centennial Hall. Our event will begin at 8am with breakfast and continue through until lunch. Everyone is welcome.</p>
 
-                <a class="post-link" href="slider-post.html" title="Read post: Post with featured slider">Continue Reading</a>
+                <a class="post-link" href="post/13" title="Read post: Post with featured slider">Continue Reading</a>
 
             </article>
 
         </div>
 
-        <p class="text-center"><a class="btn btn-quattro" href="blog.html">News Archives</a></p>
+        <p class="text-center"><a class="btn btn-quattro" href="news">News Archives</a></p>
 
     </div>
 
@@ -278,12 +277,8 @@ CONTACT
 
 @include('includes.scripts')
 
-<?php //include("includes/footer.php"); ?>
-
-<?php //include("includes/scripts.php") ?>
-
 <script type="text/javascript" src='/assets/js/jquery.flexslider.min.js'></script>
-<script type="text/javascript"t src='/assets/js/jquery.stellar.js'></script>
+<script type="text/javascript" src='/assets/js/jquery.stellar.js'></script>
 <script type="text/javascript" src="/assets/js/jquery.masonry.min.js"></script>
 <script type="text/javascript" src="/assets/js/waypoints.min.js"></script>
 <script type="text/javascript" src="/assets/js/waypoints-sticky.min.js"></script>

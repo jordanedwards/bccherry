@@ -10,7 +10,7 @@
 				</ul>
 				
 				<p style="float:left;">&copy;2016 BC Cherry Association</p>
-				<a href="http://orchardcity.ca"><img src="http://orchardcity.ca/images/orchardcity_logo_short.png" alt="Kelowna Website Design by Orchard City Web Development" class="img-responsive" style="height: 40px; float:right"></a>
+				{{--<a href="http://orchardcity.ca"><img src="http://orchardcity.ca/images/orchardcity_logo_short.png" alt="Kelowna Website Design by Orchard City Web Development" class="img-responsive" style="height: 40px; float:right"></a>--}}
 			</div>
 			
 		</footer>
