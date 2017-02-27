@@ -143,18 +143,18 @@ NEWS
 
                 <header class="post-header">
 
-                    <h2 class="post-title"><a href="image-post.html" title="Read post: Post with single featured image">Call for Proposals: Research 2016</a></h2>
+                    <h2 class="post-title"><a href="slider-post.html" title="Read post: Post with featured slider">AGM February 16th 2017</a></h2>
 
                     <ul class="post-meta small">
-                        <li><i class="fa fa-calendar"></i><a href="#">Dec 30, 2015</a></li>
+                        <li><i class="fa fa-calendar"></i><a href="#">Nov 30, 2015</a></li>
                         <li><i class="fa fa-comments-o"></i><a href="#">14 Comments</a></li>
-                        <li><i class="fa fa-folder-open-o"></i><a href="#">Cherry Industry News</a> , <a href="#">Funding Opportunities</a></li>
+                        <li><i class="fa fa-folder-open-o"></i><a href="#">Member News</a></li>
                     </ul>
                 </header>
 
-                <p>The BCCA Research Committee is accepting research project proposals until January 15th, 2016. Limited, secure funding is available to established and new projects.</p>
+                <p>The 2017 BCCA AGM will be held on February 16th at the Ramada Inn. Everyone is welcome.</p>
 
-                <a class="post-link" href="post/12" title="Read post: Post with single featured image">Continue Reading</a>
+                <a class="post-link" href="post/13" title="Read post: Post with featured slider">Continue Reading</a>
 
             </article>
 
@@ -162,18 +162,16 @@ NEWS
 
                 <header class="post-header">
 
-                    <h2 class="post-title"><a href="slider-post.html" title="Read post: Post with featured slider">AGM February 23rd 2016</a></h2>
+                    <h2 class="post-title"><a href="image-post.html" title="Read post: Post with single featured image">AGM Agenda</a></h2>
 
                     <ul class="post-meta small">
-                        <li><i class="fa fa-calendar"></i><a href="#">Nov 30, 2015</a></li>
-                        <li><i class="fa fa-comments-o"></i><a href="#">14 Comments</a></li>
-                        <li><i class="fa fa-folder-open-o"></i><a href="#">Cherry Industry News</a></li>
+                        <li><i class="fa fa-calendar"></i><a href="#">Feb 10, 2016</a></li>
+                        <li><i class="fa fa-comments-o"></i><a href="#">0 Comments</a></li>
+                        <li><i class="fa fa-folder-open-o"></i><a href="#">Member News</a></li>
                     </ul>
                 </header>
 
-                <p>The BCCA AGM will be held on February 23rd at the Rutland Centennial Hall. Our event will begin at 8am with breakfast and continue through until lunch. Everyone is welcome.</p>
-
-                <a class="post-link" href="post/13" title="Read post: Post with featured slider">Continue Reading</a>
+                <p>Download the agenda here: <a href="/AGM-2017-AGENDA.pdf">&raquo; 2017 AGM Agenda</a></p>
 
             </article>
 
