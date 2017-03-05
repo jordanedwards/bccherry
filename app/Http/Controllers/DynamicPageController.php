@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cherry;
+use App\Member;
 use App\Page;
 
 class DynamicPageController extends Controller
@@ -50,7 +51,29 @@ class DynamicPageController extends Controller
 
     public function EmploymentDirectory()
     {
-        return view('pages.employment-directory');
+        $page = Page::where('slug', 'employment-directory')->first();
+        if (!$page){
+            return view('errors.404');
+        }
+
+        $members = Member::where('employment_directory_active', '1')
+            ->where('active', '1')
+            ->orderBy('name', 'asc')
+            ->get();
+
+        if (!$members){
+            return view('errors.404');
+        }
+
+        $data = [
+            'members' => $members,
+            'page' => $page,
+            'title' => 'BC Cherry Association',
+            'footer' => 'dark',
+            'side_menu' => 'employment',
+        ];
+
+        return view('pages.employment-directory', $data);
     }
 
     public function ApplicationForm()

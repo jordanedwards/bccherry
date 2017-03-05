@@ -34,8 +34,7 @@
                     </header>
                     <div>
                         <div class="content">
-                            <div class="pf-content"><p>Check back in January 2017 for a full listing of those hiring for
-                                    next season!</p>
+                            <div class="pf-content"><p>Please contact the orchards listed in our <a href="employment-directory">"Who's Hiring"</a> page directly</p>
                             </div>
 
                         </div>
