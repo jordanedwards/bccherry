@@ -1,6 +1,5 @@
 @extends('layouts.post', [
     'title' => $title,
-    'header' => $header,
     'footer' => $footer,
     'side_menu' => $side_menu
 ])

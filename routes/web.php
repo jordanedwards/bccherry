@@ -15,20 +15,20 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('our-cherries', 	        ['uses' => 'StaticPageController@OurCherries']);
-Route::get('sales-directory', 	    ['uses' => 'StaticPageController@SalesDirectory']);
-Route::get('employment-info', 	    ['uses' => 'StaticPageController@EmploymentInfo']);
-Route::get('employment-directory',  ['uses' => 'StaticPageController@EmploymentDirectory']);
-Route::get('application-form', 	    ['uses' => 'StaticPageController@ApplicationForm']);
-Route::get('about-us', 	            ['uses' => 'StaticPageController@AboutUs']);
-Route::get('membership',            ['uses' => 'StaticPageController@Membership']);
-Route::get('faq', 	                ['uses' => 'StaticPageController@FAQ']);
-Route::get('news', 	                ['uses' => 'StaticPageController@News']);
-Route::get('links', 	            ['uses' => 'StaticPageController@Links']);
-Route::get('members', 	            ['uses' => 'StaticPageController@Members']);
-Route::get('contact', 	            ['uses' => 'StaticPageController@Contact']);
+Route::get('our-cherries', 	        ['uses' => 'DynamicPageController@OurCherries']);
+Route::get('sales-directory', 	    ['uses' => 'DynamicPageController@SalesDirectory']);
+Route::get('employment-directory',  ['uses' => 'DynamicPageController@EmploymentDirectory']);
+Route::get('application-form', 	    ['uses' => 'DynamicPageController@ApplicationForm']);
+Route::get('faq', 	                ['uses' => 'DynamicPageController@FAQ']);
+Route::get('news', 	                ['uses' => 'DynamicPageController@News']);
+Route::get('links', 	            ['uses' => 'DynamicPageController@Links']);
+Route::get('members', 	            ['uses' => 'DynamicPageController@Members']);
+Route::get('contact', 	            ['uses' => 'DynamicPageController@Contact']);
 
-Route::get('grower-resources', 	    ['uses' => 'StaticPageController@GrowerResources']);
-Route::get('our-marketing', 	    ['uses' => 'StaticPageController@OurMarketing']);
-Route::get('our-research', 	        ['uses' => 'StaticPageController@OurResearch']);
+Route::get('grower-resources', 	    ['uses' => 'DynamicPageController@GrowerResources']);
+Route::get('our-marketing', 	    ['uses' => 'DynamicPageController@OurMarketing']);
+Route::get('our-research', 	        ['uses' => 'DynamicPageController@OurResearch']);
 
+Route::get('employment-info', 	    ['uses' => 'DynamicPageController@EmploymentInfo']);
+Route::get('about-us', 	            ['uses' => 'DynamicPageController@AboutUs']);
+Route::get('membership',            ['uses' => 'DynamicPageController@Membership']);

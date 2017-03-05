@@ -366,6 +366,7 @@ class ComposerStaticInit071e410c6daabfbd15e0729a1c1b4b17
         'CreateAdminsTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2014_11_16_205658_create_admins_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_230549_create_categories_table.php',
         'CreateCertificationTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_223646_create_certification_table.php',
+        'CreateCherryTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_05_163326_create_cherry_table.php',
         'CreateFacilitiesFeatureTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_221505_create_facilities_feature_table.php',
         'CreateMembersTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_193611_create_members_table.php',
         'CreateNewsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_230042_create_news_table.php',

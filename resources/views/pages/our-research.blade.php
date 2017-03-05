@@ -1,7 +1,7 @@
 @extends('layouts.main', [
-    'title' => 'BC Cherry Association',
+    'title' => $title,
     'header' => 'Grower Resources',
-    'footer' => 'dark',
+    'footer' => $footer,
 ])
 
 @section('header-styles')
@@ -46,17 +46,6 @@
                             <li><i class="fa fa-calendar"></i><a href="#">26 October 2016</a></li>
                             <li><i class="fa fa-folder-open-o"></i><a href="#">Cherry info</a></li>
                         </ul>
-
-                        <!--<div class="flexslider post-slider">
-
-                            <ul class="slides">
-
-                                <li><img class="img-responsive" src="images/cherry-harvest-dark.jpg" alt="" /></li>
-                                <li><img class="img-responsive" src="images/cherry2.jpg" alt="" /></li>
-
-                            </ul>
-
-                        </div> -->
 
                     </header>
                     <div>

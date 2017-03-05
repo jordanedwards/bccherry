@@ -42,6 +42,11 @@
     <!-- jQuery Version 1.11.0 -->
     <script src="{{asset("packages/serverfireteam/panel/js/jquery-1.11.0.js")}}"></script>
 
+    <style>
+        input[type="checkbox"], input[type="radio"] {
+            zoom: 1.5;
+        }
+    </style>
 </head>
 
 <body class="@yield('bodyClass')">

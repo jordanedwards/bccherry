@@ -5,7 +5,11 @@
         $urls = \Config::get('panel.panelControllers');
         $linkItems  = \Serverfireteam\Panel\libs\dashboard::getItems();
     ?>
-
+<style>
+    input[type="checkbox"], input[type="radio"] {
+        zoom: 1.5;
+    }
+</style>
     <div class="loading">
         <h1> LOADING </h1>
         <div class="spinner">
@@ -71,7 +75,7 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <div class="powered-by"><a href="http://laravelpanel.com">{{ \Lang::get('panel::fields.thankYouNote') }}</a></div>
+        {{--<div class="powered-by"><a href="http://laravelpanel.com">{{ \Lang::get('panel::fields.thankYouNote') }}</a></div>--}}
         <div id="page-wrapper">
 
 

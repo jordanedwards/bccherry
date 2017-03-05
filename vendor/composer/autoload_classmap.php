@@ -9,6 +9,7 @@ return array(
     'CreateAdminsTable' => $vendorDir . '/serverfireteam/panel/src/database/migrations/2014_11_16_205658_create_admins_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2017_02_12_230549_create_categories_table.php',
     'CreateCertificationTable' => $baseDir . '/database/migrations/2017_02_12_223646_create_certification_table.php',
+    'CreateCherryTable' => $baseDir . '/database/migrations/2017_03_05_163326_create_cherry_table.php',
     'CreateFacilitiesFeatureTable' => $baseDir . '/database/migrations/2017_02_12_221505_create_facilities_feature_table.php',
     'CreateMembersTable' => $baseDir . '/database/migrations/2017_02_12_193611_create_members_table.php',
     'CreateNewsTable' => $baseDir . '/database/migrations/2017_02_12_230042_create_news_table.php',

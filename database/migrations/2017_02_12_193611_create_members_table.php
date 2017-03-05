@@ -20,7 +20,8 @@ class CreateMembersTable extends Migration
             $table->string('city');
             $table->string('postal_code');
             $table->string('contact_person')->nullable();
-            $table->string('business_phone');
+            $table->string('business_phone')->nullable();
+            $table->string('brands')->nullable();
             $table->string('sales_agent')->nullable();
             $table->string('sales_phone')->nullable();
             $table->string('sales_email')->nullable();
@@ -36,6 +37,7 @@ class CreateMembersTable extends Migration
             $table->text('features')->nullable();
             $table->text('harvest_weeks')->nullable();
             $table->text('certifications')->nullable();
+            $table->text('varieties')->nullable();
             $table->string('positions_available')->nullable();
             $table->string('logo')->nullable();
             $table->smallInteger('active')->default(0);

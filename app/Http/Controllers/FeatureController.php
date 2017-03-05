@@ -21,9 +21,11 @@ class FeatureController extends CrudController{
 
         $this->grid = \DataGrid::source($this->filter);
         $this->grid->add('name', 'Name',true);
-        $this->grid->orderBy('name','desc');
-
         $this->addStylesToGrid();
+
+        $this->grid->paginate(20);
+        $this->grid->orderBy('name','asc');
+
         return $this->returnView();
     }
     

@@ -11,24 +11,23 @@ use Illuminate\Http\Request;
 class NewsItemController extends CrudController{
 
     public function all($entity){
-        parent::all($entity); 
+        parent::all($entity);
 
-        /** Simple code of  filter and grid part , List of all fields here : http://laravelpanel.com/docs/master/crud-fields
+        $this->filter = \DataFilter::source(new \App\NewsItem());
+        $this->filter->add('title', 'Title', 'text');
+        $this->filter->submit('search');
+        $this->filter->reset('reset');
+        $this->filter->build();
 
+        $this->grid = \DataGrid::source($this->filter);
+        $this->grid->add('title', 'Title');
+        $this->grid->add('created_at', 'Date');
+        $this->grid->add('published', 'Published');
+        $this->addStylesToGrid();
 
-			$this->filter = \DataFilter::source(new \App\Category);
-			$this->filter->add('name', 'Name', 'text');
-			$this->filter->submit('search');
-			$this->filter->reset('reset');
-			$this->filter->build();
+        $this->grid->paginate(20);
+        $this->grid->orderBy('created_at','desc');
 
-			$this->grid = \DataGrid::source($this->filter);
-			$this->grid->add('name', 'Name');
-			$this->grid->add('code', 'Code');
-			$this->addStylesToGrid();
-
-        */
-                 
         return $this->returnView();
     }
     
@@ -36,19 +35,21 @@ class NewsItemController extends CrudController{
         
         parent::edit($entity);
 
-        /* Simple code of  edit part , List of all fields here : http://laravelpanel.com/docs/master/crud-fields
-	
-			$this->edit = \DataEdit::source(new \App\Category());
+        $this->edit = \DataEdit::source(new \App\NewsItem());
 
-			$this->edit->label('Edit Category');
+        $this->edit->label('Edit News Item');
 
-			$this->edit->add('name', 'Name', 'text');
-		
-			$this->edit->add('code', 'Code', 'text')->rule('required');
+        $this->edit->add('title', 'Title', 'text')->rule('required');
 
+        $this->edit->add('created_at', 'Date', 'date')->format('Y-m-d', 'CA');
 
-        */
-       
+        $this->edit->add('content', 'Body', 'redactor');
+
+        $this->edit->add('published', 'Status', 'select')->options([
+            0 => "Unpublished",
+            1 => "Published",
+        ]);
+
         return $this->returnEditView();
     }    
 }

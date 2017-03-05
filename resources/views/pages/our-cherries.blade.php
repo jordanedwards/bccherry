@@ -49,40 +49,11 @@
                             </p>
 
                             <blockquote>
-                                <p style="padding-top: 20px;"><span><strong>CRISTALINA: &nbsp;</strong><em>Christalina is an early season, heart shaped fruit. It has dark flesh and a large size.&nbsp;</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SATIN:&nbsp;</strong><em>A very beautiful early season, dark and large cherry that will extend the Okanagan season with quick start.&nbsp;</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SANTINA: </strong><em>Beautiful heart shaped, Santina is an early fruit that picks well and packs nicely for a great product.</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SUITE NOTE: </strong>&nbsp;<em>Picked at the right moment Suite Note is a dark, large, firm and delicious cherry. For early markets the potential is great however there&nbsp;is very limited production.&nbsp;</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SONNET:</strong> <em>A very large early cherry – very “cheeky” but it gets the season started with a smile. The Sonnet has a light flesh colour and is very sweet.</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SYLVIA:</strong> <em>Always a pleasant surprise, hiding under a very leafy branch, the Sylvia is usually well protected from the weather and harvests as a very uniform size and shape that looks lovely in the box.</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SKEENA: </strong><em>A favourite of many buyers, Skeena is a dark and large cherry that has gained popularity in recent years. It is firm and easily sizes up. Pick it before the forecasted rain!&nbsp;</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>LAPINS:</strong> <em>A wonderful variety bred by Dr. Charles Lapins (at PARC), for whom it is named. Possibly the best flavored cherry in the orchard, the Lapin can be very large, and is always best when left to ripen on the tree until it is a rich dark red. Lapin season is mid July to early August.</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SWEETHEART:</strong> <em>One of the best of the late cherries from the PARC breeding program, the Sweetheart is now widely grown around the world. The fruit is very firm, and moderately sweet with good flavour. Harvest follows directly after Lapin, through the first two weeks of August.</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>STACCATO:</strong> <em>A very late cherry, ripens after Sweetheart, a full month after ‘Bing’ and produces a large and firm dark cherry, glossy and attractive in a pack. Size is similar to Sweetheart, with good flavour and sweetness when picked at optimum maturity.</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SENTENNIAL: </strong><em>A high yielding variety that darkens up early but takes much longer than the rest to sweeten up. Sentennial is often the firmest and latest fruit available, it ships and stores very well. &nbsp;This cherry has a nice round shape and looks good in a bag or box.&nbsp;</em></span>
-                                </p>
-                                <hr>
-                                <p><span><strong>SOVEREIGN:</strong>&nbsp;<em>Sovereign is heart-shaped fruit on a long stem. It harvests a week to ten days after Staccato, with good firmness, and light red/pink flesh. This is the other latest available cherry variety in commercial production.</em></span>
+                                @foreach($cherries as $cherry)
+                                    <p style="padding-top: 20px;"><span><strong>{{ strtoupper($cherry->name) }}: </strong><em>{{ $cherry->description }}</em></span>
+                                    </p>
+                                @endforeach
+
                                 </p>
                             </blockquote>
                         </div>
