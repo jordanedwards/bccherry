@@ -139,41 +139,63 @@ NEWS
 
         <div class="row">
 
-            <article class="col-sm-6 post-entry">
+            @foreach($news as $newsitem)
 
-                <header class="post-header">
+                <article class="col-sm-6 post-entry">
 
-                    <h2 class="post-title"><a href="slider-post.html" title="Read post: Post with featured slider">AGM February 16th 2017</a></h2>
+                    <header class="post-header">
 
-                    <ul class="post-meta small">
-                        <li><i class="fa fa-calendar"></i><a href="#">Nov 30, 2015</a></li>
-                        <li><i class="fa fa-comments-o"></i><a href="#">14 Comments</a></li>
-                        <li><i class="fa fa-folder-open-o"></i><a href="#">Member News</a></li>
-                    </ul>
-                </header>
+                        <h2 class="post-title"><a href="post/{{ $newsitem->id }}" title="Read post: Post with featured slider">{{ $newsitem->title }}</a></h2>
 
-                <p>The 2017 BCCA AGM will be held on February 16th at the Ramada Inn. Everyone is welcome.</p>
+                        <ul class="post-meta small">
+                            <li><i class="fa fa-calendar"></i><a href="#">{{ $newsitem->updated_at }}</a></li>
+                            {{--<li><i class="fa fa-comments-o"></i><a href="#">14 Comments</a></li>--}}
+                            <li><i class="fa fa-folder-open-o"></i><a href="#">Member News</a></li>
+                        </ul>
+                    </header>
 
-                <a class="post-link" href="post/13" title="Read post: Post with featured slider">Continue Reading</a>
+                        {!! $newsitem->content !!}
 
-            </article>
+                    {{--<a class="post-link" href="post/13" title="Read post: Post with featured slider">Continue Reading</a>--}}
 
-            <article class="col-sm-6 post-entry">
+                </article>
 
-                <header class="post-header">
+            @endforeach
+            {{--<article class="col-sm-6 post-entry">--}}
 
-                    <h2 class="post-title"><a href="image-post.html" title="Read post: Post with single featured image">AGM Agenda</a></h2>
+                {{--<header class="post-header">--}}
 
-                    <ul class="post-meta small">
-                        <li><i class="fa fa-calendar"></i><a href="#">Feb 10, 2016</a></li>
-                        <li><i class="fa fa-comments-o"></i><a href="#">0 Comments</a></li>
-                        <li><i class="fa fa-folder-open-o"></i><a href="#">Member News</a></li>
-                    </ul>
-                </header>
+                    {{--<h2 class="post-title"><a href="slider-post.html" title="Read post: Post with featured slider">AGM February 16th 2017</a></h2>--}}
 
-                <p>Download the agenda here: <a href="/AGM-2017-AGENDA.pdf">&raquo; 2017 AGM Agenda</a></p>
+                    {{--<ul class="post-meta small">--}}
+                        {{--<li><i class="fa fa-calendar"></i><a href="#">Nov 30, 2015</a></li>--}}
+                        {{--<li><i class="fa fa-comments-o"></i><a href="#">14 Comments</a></li>--}}
+                        {{--<li><i class="fa fa-folder-open-o"></i><a href="#">Member News</a></li>--}}
+                    {{--</ul>--}}
+                {{--</header>--}}
 
-            </article>
+                {{--<p>The 2017 BCCA AGM will be held on February 16th at the Ramada Inn. Everyone is welcome.</p>--}}
+
+                {{--<a class="post-link" href="post/13" title="Read post: Post with featured slider">Continue Reading</a>--}}
+
+            {{--</article>--}}
+
+            {{--<article class="col-sm-6 post-entry">--}}
+
+                {{--<header class="post-header">--}}
+
+                    {{--<h2 class="post-title"><a href="image-post.html" title="Read post: Post with single featured image">AGM Agenda</a></h2>--}}
+
+                    {{--<ul class="post-meta small">--}}
+                        {{--<li><i class="fa fa-calendar"></i><a href="#">Feb 10, 2016</a></li>--}}
+                        {{--<li><i class="fa fa-comments-o"></i><a href="#">0 Comments</a></li>--}}
+                        {{--<li><i class="fa fa-folder-open-o"></i><a href="#">Member News</a></li>--}}
+                    {{--</ul>--}}
+                {{--</header>--}}
+
+                {{--<p>Download the agenda here: <a href="/AGM-2017-AGENDA.pdf">&raquo; 2017 AGM Agenda</a></p>--}}
+
+            {{--</article>--}}
 
         </div>
 
@@ -195,7 +217,7 @@ CALL TO ACTION
                 <p><strong style="display:block">Looking for work?</strong> Apply online to 35 Okanagan valley growers at the same time, right here.</p>
             </div>
             <div class="col-md-3 cta-button">
-                <p class="text-center"><a class="btn btn-quattro transparent" href="application-form.php">Apply Here</a></p>
+                <p class="text-center"><a class="btn btn-quattro transparent" href="/application-form">Apply Here</a></p>
             </div>
         </div><!--End row-->
 

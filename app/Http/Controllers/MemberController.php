@@ -95,10 +95,10 @@ class MemberController extends CrudController{
             ->options(Category::pluck("title", "title")->all());
 
         $this->edit->add('distribution_type','Distribution type','select')->options([
-            "",
-            "Direct",
-            "Broker",
-            "Direct And Broker",
+            "" => "",
+            "Direct" => "Direct",
+            "Broker" => "Broker",
+            "Direct And Broker" => "Direct And Broker",
         ]);
 
         $features = Feature::pluck("name", "id")->all();

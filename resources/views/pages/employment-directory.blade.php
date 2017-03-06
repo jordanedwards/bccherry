@@ -8,6 +8,8 @@
 <style>
     .member_name {
         font-size: 1.2em;
+        color: #A21418;
+        text-decoration: none;
     }
     .directory-listing:nth-child(even) {background: #CCC}
     blockquote {

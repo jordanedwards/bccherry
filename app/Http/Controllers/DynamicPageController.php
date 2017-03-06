@@ -4,13 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Cherry;
 use App\Member;
+use App\NewsItem;
 use App\Page;
+use Illuminate\Http\Request;
 
 class DynamicPageController extends Controller
 {
     public function index()
     {
-        return view('home');
+        // Get most recent two news items
+        $news = NewsItem::where('published', '1')->orderBy('created_at', 'desc')->limit(2)->get();
+
+        if (!$news){
+            $data = [
+                "news" => [],
+            ];
+        } else {
+            $data = [
+                "news" => $news,
+            ];
+        }
+
+        return view('home', $data);
     }
     
     public function OurCherries()
@@ -27,9 +42,90 @@ class DynamicPageController extends Controller
         return view('pages.our-cherries', $data);
     }
 
-    public function SalesDirectory()
+    public function SalesDirectory(Request $request)
     {
-        return view('pages.sales-directory');
+        $where = [
+            ['sales_directory_active', "=",  '1'],
+            ['active', "=", '1'],
+        ];
+
+
+        if ($request->has('searchTerm')){
+            $where = [
+                ['sales_directory_active', "=",  '1'],
+                ['active', "=", '1'],
+                ['name', "LIKE", "%" . $request->get('searchTerm') . "%"],
+            ];
+
+            $orWhere_lead = [
+                ['sales_directory_active', "=",  '1'],
+                ['active', "=", '1'],
+                ['name', "LIKE", $request->get('searchTerm') . "%"],
+            ];
+
+            $orWhere_follow = [
+                ['sales_directory_active', "=",  '1'],
+                ['active', "=", '1'],
+                ['name', "LIKE", $request->get('searchTerm') . "%"],
+            ];
+
+            $members = Member::where($where)
+                ->orWhere($orWhere_lead)
+                ->orWhere($orWhere_follow)
+                ->orderBy('name', 'asc')
+                ->get();
+        }
+
+        elseif($request->has('filter')) {
+            // Evaluate filters
+            $filter = $request->get('filter');
+            $value = $request->get('value');
+
+            if ($filter == "city"){
+                $where = [
+                    ['sales_directory_active', "=",  '1'],
+                    ['active', "=", '1'],
+                    ['city', $value]
+                ];
+            } elseif($filter == "variety"){
+
+            } elseif($filter == "harvest"){
+
+            } elseif($filter == "certification"){
+
+            }
+
+            $members = Member::where($where)
+                ->orderBy('name', 'asc')
+                ->get();
+        }
+
+        else
+        {
+            $members = Member::where($where)
+                ->orderBy('name', 'asc')
+                ->get();
+        }
+
+
+        if (!$members){
+            return view('errors.404');
+        }
+
+        $cherries = Cherry::orderBy('name', 'asc')->get();
+        if (!$cherries){
+            return view('errors.404');
+        }
+
+        $data = [
+            'members' => $members,
+            'title' => 'BC Cherry Association',
+            'footer' => 'dark',
+            'side_menu' => 'employment',
+            "cherries" => $cherries,
+        ];
+
+        return view('pages.sales-directory', $data);
     }
 
     public function EmploymentInfo()

@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', 	                ['uses' => 'DynamicPageController@index']);
 Route::get('our-cherries', 	        ['uses' => 'DynamicPageController@OurCherries']);
 Route::get('sales-directory', 	    ['uses' => 'DynamicPageController@SalesDirectory']);
 Route::get('employment-directory',  ['uses' => 'DynamicPageController@EmploymentDirectory']);

@@ -81,4 +81,24 @@ class Member extends Model {
             return true;
         }
     }
+
+    public function getVarieties($format)
+    {
+        $varieties = explode("|", $this->varieties);
+        $output = [];
+
+        foreach ($varieties as $key => $value){
+            $record = Cherry::where('id', $value)->first();
+            if ($record){
+                array_push($output, $record['name']);
+            }
+        }
+
+        if ($format == 'string'){
+            return implode(", ", $output);
+        }
+
+        return $output;
+    }
+
 }
