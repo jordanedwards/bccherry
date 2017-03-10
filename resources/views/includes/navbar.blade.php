@@ -43,7 +43,6 @@
 
                     <ul class="dropdown-menu">
                         <li><a href="/about-us">About us</a></li>
-                        <!--<li><a href="member-list.php">Member List</a></li>-->
                         <li><a href="/membership">Membership</a></li>
                         <li><a href="/faq">FAQs</a></li>
                         <li><a href="/news">News</a></li>
@@ -58,6 +57,7 @@
                                 @endif
                             </div>
                         @endif
+                        <li><a href="exporting-to-prc">Exporting to the PRC</a></li>
                         <li>
                             <a href="/members">Member Login</a>
                         </li>

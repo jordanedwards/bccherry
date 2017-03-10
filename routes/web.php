@@ -25,6 +25,7 @@ Route::get('contact', 	            ['uses' => 'DynamicPageController@Contact']);
 Route::get('grower-resources', 	    ['uses' => 'DynamicPageController@GrowerResources']);
 Route::get('our-marketing', 	    ['uses' => 'DynamicPageController@OurMarketing']);
 Route::get('our-research', 	        ['uses' => 'DynamicPageController@OurResearch']);
+Route::get('exporting-to-prc', 	    ['uses' => 'DynamicPageController@ExportingToPRC']);
 
 Route::get('employment-info', 	    ['uses' => 'DynamicPageController@EmploymentInfo']);
 Route::get('about-us', 	            ['uses' => 'DynamicPageController@AboutUs']);

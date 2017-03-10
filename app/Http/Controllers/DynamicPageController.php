@@ -177,6 +177,23 @@ class DynamicPageController extends Controller
         return view('pages.application-form');
     }
 
+    public function ExportingToPRC()
+    {
+        $page = Page::where('slug', 'exporting-to-prc')->first();
+        if (!$page){
+            return view('errors.404');
+        }
+
+        $data = [
+            "page" => $page,
+            'title' => 'BC Cherry Association',
+            'footer' => 'dark',
+            'side_menu' => 'association'
+        ];
+
+        return view('pages.standard-page', $data);
+    }
+
     public function AboutUs()
     {
         $page = Page::where('slug', 'about-us')->first();

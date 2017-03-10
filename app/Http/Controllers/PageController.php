@@ -39,7 +39,7 @@ class PageController extends CrudController{
         $this->edit->label('Edit Page');
 
         $this->edit->add('title', 'Title', 'text')->rule('required');
-//        $this->edit->add('slug', 'Slug', 'text')->rule('required');
+        $this->edit->add('slug', 'Slug', 'text')->rule('required');
         $this->edit->add('content', 'Content', 'redactor');
 
         $this->edit->add('published', 'Published', 'select')->options([
