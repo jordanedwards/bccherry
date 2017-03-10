@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Cherry;
+use App\FAQ;
 use App\Member;
 use App\NewsItem;
 use App\Page;
+use Carbon\Carbon as Carbon;
 use Illuminate\Http\Request;
 
 class DynamicPageController extends Controller
@@ -228,14 +230,61 @@ class DynamicPageController extends Controller
         return view('pages.standard-page', $data);
     }
 
+    public function Members()
+    {
+        $data = [
+            "page" => (object) [
+                "title" => "Member Login",
+                "updated_at" => Carbon::now(),
+                "content" => "<p>Coming Soon</p>"
+            ],
+            'title' => 'BC Cherry Association',
+            'footer' => 'dark',
+            'side_menu' => 'association'
+        ];
+
+        return view('pages.standard-page', $data);
+    }
+
     public function FAQ()
     {
-        return view('pages.faq');
+        $page = Page::where('slug', 'faqs')->first();
+        if (!$page){
+            return view('errors.404');
+        }
+
+        $faqs = FAQ::orderBy('id', 'asc')->get();
+        if (!$faqs){
+            return view('errors.404');
+        }
+
+        $data = [
+            "page" => $page,
+            "faqs" => $faqs,
+        ];
+
+        return view('pages.faq', $data);
+
     }
 
     public function News()
     {
-        return view('pages.news');
+        $news = NewsItem::where('published', '1')
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
+
+        if (!$news){
+            return view('errors.404');
+        }
+
+        $data = [
+            'news' => $news,
+            'title' => 'BC Cherry Association',
+            'footer' => 'dark',
+            'side_menu' => 'association',
+        ];
+
+        return view('pages.news', $data);
     }
 
     public function Links()
@@ -243,10 +292,10 @@ class DynamicPageController extends Controller
         return view('pages.links');
     }
 
-    public function Members()
-    {
-        return view('pages.members-list');
-    }
+//    public function Members()
+//    {
+//        return view('pages.member-list');
+//    }
 
     public function Contact()
     {

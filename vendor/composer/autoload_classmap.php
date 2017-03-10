@@ -11,6 +11,7 @@ return array(
     'CreateCertificationTable' => $baseDir . '/database/migrations/2017_02_12_223646_create_certification_table.php',
     'CreateCherryTable' => $baseDir . '/database/migrations/2017_03_05_163326_create_cherry_table.php',
     'CreateFacilitiesFeatureTable' => $baseDir . '/database/migrations/2017_02_12_221505_create_facilities_feature_table.php',
+    'CreateFaqTable' => $baseDir . '/database/migrations/2017_03_10_040523_create_faq_table.php',
     'CreateMembersTable' => $baseDir . '/database/migrations/2017_02_12_193611_create_members_table.php',
     'CreateNewsTable' => $baseDir . '/database/migrations/2017_02_12_230042_create_news_table.php',
     'CreatePagesTable' => $baseDir . '/database/migrations/2017_02_12_225901_create_pages_table.php',

@@ -30,7 +30,7 @@
                         <header class="post-header">
 
                             <ul class="post-meta small">
-                                <li><i class="fa fa-calendar"></i><a href="#">{{ $page->updated_at }}</a></li>
+                                <li><i class="fa fa-calendar"></i><a href="#">{{ $page->updated_at->format('F d Y g:i A') }}</a></li>
                                 <li><i class="fa fa-folder-open-o"></i><a href="#">Cherry info</a></li>
                             </ul>
 

@@ -15,7 +15,7 @@
 			<li>
 			<a href="members">Member Login</a>
 			</li>	
-			<li><a href="contact">Contact</a></li>
+			<li><a href="/#contact">Contact</a></li>
 		</ul>
 		
 	</div>

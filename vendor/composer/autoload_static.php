@@ -368,6 +368,7 @@ class ComposerStaticInit071e410c6daabfbd15e0729a1c1b4b17
         'CreateCertificationTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_223646_create_certification_table.php',
         'CreateCherryTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_05_163326_create_cherry_table.php',
         'CreateFacilitiesFeatureTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_221505_create_facilities_feature_table.php',
+        'CreateFaqTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_10_040523_create_faq_table.php',
         'CreateMembersTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_193611_create_members_table.php',
         'CreateNewsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_230042_create_news_table.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_225901_create_pages_table.php',
