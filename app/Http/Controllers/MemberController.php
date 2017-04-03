@@ -6,6 +6,7 @@ use App\Category;
 use App\Certification;
 use App\Cherry;
 use App\Feature;
+use App\Harvest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use \Serverfireteam\Panel\CrudController;
@@ -119,7 +120,11 @@ class MemberController extends CrudController{
         $this->edit->add('varieties', 'Varieties', 'checkboxgroup')
             ->options($cherries);
 
-        $this->edit->add('harvest_weeks', 'Harvest dates', 'textarea');
+        $harvest_weeks = Harvest::pluck("week", "week")->all();
+
+        $this->edit->add('harvest_weeks', 'Harvest', 'checkboxgroup')
+            ->options($harvest_weeks);
+//        $this->edit->add('', 'Harvest dates', 'textarea');
 
         $this->edit->add('orchard_description', 'Orchard Description', 'redactor');
         $this->edit->add('logo', 'Logo', 'image')->move('uploads/logos/')->preview(80,80);

@@ -77,12 +77,25 @@
                                     <div><label>Fruit Available by:</label> {{ $member->distribution_type }} </div>
                                     <div><label>Varieties:</label> {{ $member->getVarieties('string') }} </div>
 
+                                    @if($member->harvest_weeks != "")
+                                    <div><label>Harvest:</label>
+                                        <blockquote>
+                                        <?php $harvest_weeks = explode("|", $member->harvest_weeks) ?>
+                                        @foreach($harvest_weeks as $harvest)
+                                            {{ $harvest }}<br>
+                                        @endforeach
+                                        </blockquote>
+                                    </div>
+                                    @endif
+
                                 </div>
                             </div>
 
                         @endforeach
 
-                        {{--<div class="directory-listing even cf row">--}}
+                    {{ $members->links() }}
+
+                    {{--<div class="directory-listing even cf row">--}}
                             {{--<div class="col-md-4"><a href="#">--}}
                                     {{--<img src="images/logos/cfp.png" class="img-responsive"--}}
                                          {{--alt="Consolidated Fruit Packers Ltd." title="Consolidated Fruit Packers Ltd."></a>--}}
@@ -558,18 +571,9 @@
                         </li>
                         <li><select name="harvest" class="form-control filter">
                                 <option value="">Harvest Week</option>
-                                <option value="3rd Week of June">3rd Week of June</option>
-                                <option value="4th Week of June">4th Week of June</option>
-                                <option value="1st Week of July">1st Week of July</option>
-                                <option value="2nd Week of July">2nd Week of July</option>
-                                <option value="3rd Week of July">3rd Week of July</option>
-                                <option value="4th Week of July">4th Week of July</option>
-                                <option value="1st Week of August">1st Week of August</option>
-                                <option value="2nd Week of August">2nd Week of August</option>
-                                <option value="3rd Week of August">3rd Week of August</option>
-                                <option value="4th Week of August">4th Week of August</option>
-                                <option value="1st Week of September">1st Week of September</option>
-                                <option value="2nd Week of September">2nd Week of September</option>
+                                @foreach($harvestWeeks as $harvest)
+                                    <option value="{{ $harvest->week }}">- {{ $harvest->week }}</option>
+                                @endforeach
                             </select></li>
                         <li><select name="city" class="form-control filter">
                                 <option value="">Farm Location</option>
@@ -593,9 +597,13 @@
                         </li>
                         <li><select name="certification" class="form-control filter">
                                 <option value="">Orchard Certifications</option>
-                                <option value="Global GAP">Global GAP</option>
-                                <option value="Canada GAP">Canada GAP</option>
-                                <option value="Environmental Farm Plan">Environmental Farm Plan</option>
+                            @foreach($certifications as $certification)
+                                    <option value="{{ $certification->id }}">- {{ $certification->name }}</option>
+                                @endforeach
+                                {{--<option value="">Orchard Certifications</option>--}}
+                                {{--<option value="Global GAP">Global GAP</option>--}}
+                                {{--<option value="Canada GAP">Canada GAP</option>--}}
+                                {{--<option value="Environmental Farm Plan">Environmental Farm Plan</option>--}}
                             </select></li>
                         {{--<li><select name="feat" class="form-control">--}}
                                 {{--<option value="">Orchard Features</option>--}}

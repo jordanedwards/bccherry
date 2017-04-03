@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Certification;
 use App\Cherry;
 use App\FAQ;
+use App\Harvest;
 use App\Member;
 use App\NewsItem;
 use App\Page;
 use Carbon\Carbon as Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class DynamicPageController extends Controller
 {
@@ -51,7 +54,6 @@ class DynamicPageController extends Controller
             ['active', "=", '1'],
         ];
 
-
         if ($request->has('searchTerm')){
             $where = [
                 ['sales_directory_active', "=",  '1'],
@@ -75,9 +77,9 @@ class DynamicPageController extends Controller
                 ->orWhere($orWhere_lead)
                 ->orWhere($orWhere_follow)
                 ->orderBy('name', 'asc')
-                ->get();
+                ->paginate(10);
+//                ->get();
         }
-
         elseif($request->has('filter')) {
             // Evaluate filters
             $filter = $request->get('filter');
@@ -89,28 +91,73 @@ class DynamicPageController extends Controller
                     ['active', "=", '1'],
                     ['city', $value]
                 ];
+                $members = Member::where($where)
+                    ->orderBy('name', 'asc')
+                    ->paginate(10);
+
             } elseif($filter == "variety"){
+                $output = [];
+                // Get members
+                $members = Member::where($where)
+                    ->orderBy('name', 'asc')
+                    ->get();
+
+                foreach ($members as $member){
+                    $varieties = $member->varieties;
+                    $varieties_array = explode("|", $varieties);
+                    if(in_array($value, $varieties_array)){
+                        array_push($output,$member);
+                    }
+
+                    $members = new LengthAwarePaginator($output, sizeof($output), 10000);
+                }
 
             } elseif($filter == "harvest"){
+                $output = [];
+                // Get members
+                $members = Member::where($where)
+                    ->orderBy('name', 'asc')
+                    ->get();
+
+                foreach ($members as $member){
+                    $harvest_array = explode("|", $member->harvest_weeks);
+
+                    if(in_array($value, $harvest_array)){
+                        array_push($output, $member);
+                    }
+
+                    $members = new LengthAwarePaginator($output, sizeof($output), 10000);
+                }
 
             } elseif($filter == "certification"){
+                $where = [
+                    ['certifications', "LIKE",  "%" . $value . "%"],
+                    ['active', "=", '1'],
+                ];
 
+                $members = Member::where($where)
+                    ->orderBy('name', 'asc')
+                    ->paginate(10);
+
+            } elseif($filter == "category"){
+                $where = [
+                    ['categories', "LIKE",  "%" . $value . "%"],
+                    ['active', "=", '1'],
+                ];
+
+                $members = Member::where($where)
+                    ->orderBy('name', 'asc')
+                    ->paginate(10);
             }
-
-            $members = Member::where($where)
-                ->orderBy('name', 'asc')
-                ->get();
         }
-
         else
         {
             $members = Member::where($where)
                 ->orderBy('name', 'asc')
-                ->get();
+                ->paginate(10);
         }
 
-
-        if (!$members){
+        if (!isset($members)){
             return view('errors.404');
         }
 
@@ -119,12 +166,17 @@ class DynamicPageController extends Controller
             return view('errors.404');
         }
 
+        $certifications = Certification::orderBy('name', 'asc')->get();
+        $harvestWeeks = Harvest::orderBy('ordinality', 'asc')->get();
+
         $data = [
             'members' => $members,
             'title' => 'BC Cherry Association',
             'footer' => 'dark',
             'side_menu' => 'employment',
             "cherries" => $cherries,
+            "certifications" => $certifications,
+            "harvestWeeks" => $harvestWeeks
         ];
 
         return view('pages.sales-directory', $data);
@@ -289,7 +341,19 @@ class DynamicPageController extends Controller
 
     public function Links()
     {
-        return view('pages.links');
+        $page = Page::where('slug', 'links')->first();
+        if (!$page){
+            return view('errors.404');
+        }
+
+        $data = [
+            "page" => $page,
+            'title' => 'BC Cherry Association',
+            'footer' => 'dark',
+            'side_menu' => 'association'
+        ];
+
+        return view('pages.standard-page', $data);
     }
 
 //    public function Members()
