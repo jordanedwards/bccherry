@@ -65,9 +65,9 @@ class MemberController extends CrudController{
 
         $this->edit->add('name', 'Name', 'text')->rule('required');
         // Location
-        $this->edit->add('address', 'Address', 'text')->rule('required');
+        $this->edit->add('address', 'Address', 'text');
         $this->edit->add('city', 'City', 'text')->rule('required');
-        $this->edit->add('postal_code', 'Postal Code', 'text')->rule('required');
+        $this->edit->add('postal_code', 'Postal Code', 'text');
 
         // Contact
         $this->edit->add('contact_person', 'Contact person', 'text');
